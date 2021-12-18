@@ -1,0 +1,35 @@
+{
+  "name": "terra_open",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Terra_AI open doors day",
+  "author": {
+    "name": "Danil Popov",
+    "email": "zabastx@gmail.com"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "_id": "terra_open@1.0.0",
+  "keywords": [
+    "terra",
+    "vue",
+    "AI"
+  ],
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
+}

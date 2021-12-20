@@ -1,5 +1,7 @@
 # terra_open
 
+### [Демо](https://zabastx.github.io/terra_open/dist/)
+
 ## Project setup
 ```
 yarn install

@@ -9,10 +9,9 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vue-cli-service build"
   },
-  "main": "main.js",
+  "main": "src/main.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
@@ -30,6 +29,5 @@
     "vue",
     "AI"
   ],
-  "license": "ISC",
-  "readme": "ERROR: No README data found!"
+  "license": "ISC"
 }

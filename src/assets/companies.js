@@ -1,0 +1,33 @@
+export default {
+	list: [
+		{ src: require('./logo/sberbank.svg'), alt: 'Сбербанк', width: 175 },
+		{ src: require('./logo/vizorlabs.svg'), alt: 'vizorlabs', width: 201 },
+		{ src: require('./logo/visionlabs.svg'), alt: 'VisionLabs', width: 170 },
+		{ src: require('./logo/innopolis.svg'), alt: 'Innopolis', width: 130 },
+		{ src: require('./logo/skyeng.svg'), alt: 'skyeng', width: 124 },
+		{ src: require('./logo/gazprom.svg'), alt: 'Газпром', width: 113 },
+		{ src: require('./logo/ipavlov.png'), alt: 'iPavlov.ai', width: 178 },
+		{ src: require('./logo/takeda.svg'), alt: 'takeda', width: 111 },
+		{ src: require('./logo/mgts.png'), alt: 'МГТС', width: 136 },
+		{ src: require('./logo/channel1.svg'), alt: 'Первый канал', width: 84 },
+		{ src: require('./logo/x5group.png'), alt: 'X5Group', width: 172 },
+		{ src: require('./logo/chitai.svg'), alt: 'Читай Город', width: 141 },
+		{ src: require('./logo/1c.png'), alt: '1С', width: 81 },
+		{ src: require('./logo/misis.svg'), alt: 'МИСиС', width: 131 },
+		{ src: require('./logo/mts.svg'), alt: 'МТС', width: 96 },
+		{ src: require('./logo/nornikel.svg'), alt: 'НОРНИКЕЛЬ', width: 238 },
+		{ src: require('./logo/rosatom.png'), alt: 'РОСАТОМ', width: 170 },
+		{ src: require('./logo/pochta.png'), alt: 'Почта России', width: 128 },
+		{ src: require('./logo/aiteko.svg'), alt: 'Айтеко', width: 134 },
+		{ src: require('./logo/medialogia.svg'), alt: 'Медиалогия', width: 210 },
+		{ src: require('./logo/pharmasyntez.svg'), alt: 'Фармасинтез', width: 175 },
+		{ src: require('./logo/leaderm.svg'), alt: 'ЛидерМ', width: 208 },
+		{ src: require('./logo/akbars.png'), alt: 'АК Барс', width: 87 },
+		{ src: require('./logo/sberstrah.svg'), alt: 'Сбер страхование', width: 280 },
+		{ src: require('./logo/transmash.png'), alt: 'Трансмаш', width: 164 },
+		{ src: require('./logo/ranhigs.png'), alt: 'РАНХиГС', width: 162 },
+		{ src: require('./logo/volg.png'), alt: 'ВОЛГ', width: 183 },
+		{ src: require('./logo/utkonos.png'), alt: 'Утконос', width: 203 },
+		{ src: require('./logo/fngk.svg'), alt: 'ФНКЦ ФМБА', width: 203 }
+	]
+}

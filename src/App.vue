@@ -84,4 +84,22 @@ h1 {
     }
   }
 }
+
+@media (max-width: 1240px) {
+	.app {
+    > * {
+      > * {
+        padding: 100px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .app {
+    > * {
+      flex-shrink: 1;
+    }
+  }
+}
 </style>

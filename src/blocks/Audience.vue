@@ -49,19 +49,19 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		> * {
-			flex: 1 0 450px;
+			flex: 1 1 400px;
 			max-width: 600px;
 			margin: 0 auto;
 		}
 		h2 {
 			font-size: 50px;
-			line-height: 58px;
+			line-height: 1.16em;
 			font-weight: 400;
 		}
 		p {
 			font-family: 'Inter', sans-serif;
 			font-size: 20px;
-			line-height: 28px;
+			line-height: 1.4em;
 		}
 		&--left p {
 			color: #383838;
@@ -89,7 +89,7 @@ export default {
 				}
 				h3 {
 					font-size: 25px;
-					line-height: 35px;
+					line-height: 1.4em;
 					color: #30668B;
 				}
 				.underline::after {
@@ -149,6 +149,67 @@ export default {
 					no-repeat center url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTE3IiBoZWlnaHQ9IjIiIHZpZXdCb3g9IjAgMCAxMTcgMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgxMTdWMkgwVjBaIiBmaWxsPSIjRjZGNkY2Ii8+Cjwvc3ZnPgo=');
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: 1240px) {
+	.audience {
+		&__content {
+			padding: 100px 10px 100px 40px;
+			h2 {
+				font-size: 40px;
+			}
+			p {
+				font-size: 18px;
+			}
+			&--left {
+				padding-right: 40px;
+				p {
+					font-size: 18px;
+				}
+			}
+			&--right {
+				.grid {
+					grid-template-columns: 100px 1fr;
+					column-gap: 20px;
+					h3 {
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.audience {
+		&__content {
+			padding: 100px 10px 100px 40px;
+			> * {
+				margin: 0;
+			}
+			h2 {
+				font-size: 30px;
+			}
+			p {
+				font-size: 16px;
+			}
+			&--left {
+				padding-right: 0;
+				p {
+					font-size: 16px;
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.audience {
+		&__content {
+			padding: 100px 10px;
 		}
 	}
 }

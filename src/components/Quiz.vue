@@ -89,6 +89,7 @@ export default {
 	height: 509px;
 	background: no-repeat url('../assets/form.svg');
 	background-size: 100% 100%;
+	margin: auto;
 	&__content {
 		flex-grow: 1;
 		padding: 0 40px;
@@ -130,7 +131,6 @@ export default {
 	.btn {
 		border: none;
 		background: none;
-		font-size: 100%;
 		font-family: inherit;
 		flex: 1 0 240px;
 		height: 65px;
@@ -146,27 +146,58 @@ export default {
 			background: no-repeat url('../assets/btn-last.svg');
 		}
 		&.submit {
-			font-size: 16px;
 			background: no-repeat url('../assets/btn-reg.svg');
 		}
 	}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 550px) {
 	.form {
-		background: no-repeat url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4gPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHdpZHRoPSIzMDEiIGhlaWdodD0iMzcyIiB2aWV3Qm94PSIwIDAgMzAxIDM3MiIgZmlsbD0ibm9uZSI+IDxwYXRoIGQ9Ik0wLjUgMjcuMTc5NEMwLjUgMjYuNDgwMyAwLjcwOTM1NSAyNS43OTczIDEuMTAxMDkgMjUuMjE4MkwxNi43ODI3IDIuMDM4OEwxNi4zNjg2IDEuNzU4NjJMMTYuNzgyNyAyLjAzODc5QzE3LjQzMzcgMS4wNzY1MSAxOC41MTk4IDAuNSAxOS42ODE2IDAuNUgyNjAuNTcyQzI2MS42OTkgMC41IDI2Mi43NTYgMS4wNDE5NCAyNjMuNDE0IDEuOTU2MThMMjk5Ljg0MSA1Mi41OTcxQzMwMC4yNyA1My4xOTI1IDMwMC41IDUzLjkwNzQgMzAwLjUgNTQuNjQwOVYzNjhDMzAwLjUgMzY5LjkzMyAyOTguOTMzIDM3MS41IDI5NyAzNzEuNUgxMjEuNjU0SDRDMi4wNjcwMSAzNzEuNSAwLjUgMzY5LjkzMyAwLjUgMzY4VjI3LjE3OTRaIiBmaWxsPSIjMkI1Mjc4IiBmaWxsLW9wYWNpdHk9IjAuMiIgc3Ryb2tlPSIjNjVCOUY0Ij48L3BhdGg+IDxwYXRoIGQ9Ik0zMDAgMzguOTU4NUwyNzIuNDggMUgyOTYuNUMyOTguNDMzIDEgMzAwIDIuNTY3IDMwMCA0LjVWMzguOTU4NVoiIGZpbGw9IiMyQjUyNzgiIHN0cm9rZT0iIzY1QjlGNCI+PC9wYXRoPiA8L3N2Zz4g');
+		background: no-repeat url('../assets/form-320.svg');
 		background-size: 100% 100%;
+		min-height: 500px;
+		transition-duration: 500ms;
+		position: relative;
+		&__title {
+			font-size: 18px;
+		}
+		&__content {
+			padding: 0 20px;
+		}
 		&__btns {
-			justify-content: center;
 			margin: auto;
-			transform: scale(80%);
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: -2px;
+			right: -3px;
+			left: 89%;
+			height: 43px;
+			background: no-repeat url('../assets/form-corner.svg');
+			background-size: 100% 43px;
+		}
+		.btn {
+			flex: unset;
+			height: 56px;
+			&.forward {
+				background: no-repeat url('../assets/btn-forward-320.svg');
+				width: 173px;
+			}
+			&.back {
+				background: no-repeat url('../assets/btn-back-320.svg');
+				width: 122px;
+			}
+			&.last {
+				background: no-repeat url('../assets/btn-forward-320.svg');
+				width: 173px;
+			}
+			&.submit {
+				background: no-repeat url('../assets/btn-forward-320.svg');
+				width: 173px;
+			}
 		}
 	}
 }
 
-@media (max-width: 550px) {
-	.form__content {
-		padding: 0 20px;
-	}
-}
 </style>

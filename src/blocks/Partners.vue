@@ -2,7 +2,7 @@
 	<section class="partners">
 		<div class="partners__content">
 			<div class="partners__content--header">
-				<h2>Нам доверяют<br>компании</h2>
+				<h2>Нам доверяют <br>компании</h2>
 				<p>Более 500 компаний обратились к нам, чтобы обучить своих разработчиков.<br>
 					Более 200 компаний обратились к нам, чтобы нанять наших выпускников в штат или на проект.
 				</p>
@@ -34,6 +34,7 @@ export default {
 		&--header {
 			display: flex;
 			margin-bottom: 50px;
+			flex-wrap: wrap;
 			h2 {
 				font-size: 50px;
 				font-weight: 400;
@@ -41,12 +42,12 @@ export default {
 			p {
 				color: #383838;
 				font-size: 20px;
-				line-height: 28px;
+				line-height: 1.4em;
 				border-left: 1px solid #65B9F4;
 				padding-left: 10px;
 			}
 			> * {
-				flex: 1 0 450px;
+				flex: 1 1 400px;
 			}
 		}
 		&--companies {
@@ -63,6 +64,68 @@ export default {
 				justify-content: center;
 				&:last-child {
 					padding-right: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1240px) {
+	.partners {
+		&__content {
+			padding: 100px 20px 100px 40px;
+			&--companies {
+				.img-wrapper {
+					padding: 35px 0;
+					padding-right: 20px;
+					img {
+						max-width: 150px;
+					}
+				}
+			}
+			&--header {
+				h2 {
+					font-size: 40px;
+				}
+				p {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.partners {
+		&__content {
+			&--header {
+				h2 {
+					font-size: 30px;
+					br {
+						display: none;
+					}
+				}
+				p {
+					font-size: 16px;
+					margin-top: 45px;
+					max-width: 575px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.partners {
+		&__content {
+			padding: 100px 10px;
+			&--companies {
+				.img-wrapper {
+					padding: 22px 0;
+					padding-right: 15px;
+					img {
+						max-width: 85px;
+					}
 				}
 			}
 		}

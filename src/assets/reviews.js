@@ -1,5 +1,5 @@
 export default {
-	list: [
+	video: [
 		{ src: 'https://www.youtube.com/embed/EffKuq_r1EA', name: 'ПАВЕЛ ЗЯБИН', time: '2 минуты' },
 		{ src: 'https://www.youtube.com/embed/wkcGqHvTn2A', name: 'ДМИТРИЙ ГУБСКИЙ', time: '15 минут' },
 		{ src: 'https://www.youtube.com/embed/5U_mUefAqDI', name: 'АНАСТАСИЯ МАКАРОВА', time: '17,5 минут' },
@@ -9,5 +9,28 @@ export default {
 		{ src: 'https://www.youtube.com/embed/9whQ5nnYWsc', name: 'ЕВГЕНИЙ СОТНИКОВ', time: '10 минут' },
 		{ src: 'https://www.youtube.com/embed/V2kxlJkIZVE', name: 'ИДЕЛЬ ФАРХУТДИНОВ', time: '10 минут' },
 		{ src: 'https://www.youtube.com/embed/d--8wCAAG-g', name: 'ИГОРЬ АРИСТОВ', time: '8 минут' },
+	],
+	text: [
+		{ src: require('./text-reviews/1.png'), href: 'https://wechoose.pro/course/data-science-and-neural-networks-on-python-neural-university#reviews' },
+		{ src: require('./text-reviews/2.png'), href: 'https://wechoose.pro/course/data-science-and-neural-networks-on-python-neural-university#reviews' },
+		{ src: require('./text-reviews/3.png'), href: 'https://pravogolosa.net/otzyvcategory?page=show_ad&adid=136171&catid=70860' },
+		{ src: require('./text-reviews/4.png'), href: 'https://www.spr.ru/page/reviews/?id_review=5739419' },
+		{ src: require('./text-reviews/5.png'), href: 'https://tutortop.ru/school-reviews/universitet-iskusstvennogo-intellekta/' },
+		{ src: require('./text-reviews/6.png'), href: 'https://tutortop.ru/school-reviews/universitet-iskusstvennogo-intellekta/' },
+		{ src: require('./text-reviews/7.png'), href: 'https://otzovik.com/review_12267433.html' },
+		{ src: require('./text-reviews/8.png'), href: 'https://otzovik.com/review_11995805.html' },
+		{ src: require('./text-reviews/9.png'), href: 'https://progbasics.ru/schools/universitet-iskusstvennogo-intellekta/reviews' },
+		{ src: require('./text-reviews/10.png'), href: 'https://progbasics.ru/schools/universitet-iskusstvennogo-intellekta/reviews' },
+	],
+	social: [
+		{ src: require('./social/1.png'), href: 'https://www.instagram.com/p/CNs8qaUp6q2/?utm_source=ig_web_copy_link' },
+		{ src: require('./social/2.png'), href: 'https://www.instagram.com/p/CLjWOVKJeni/?utm_source=ig_web_copy_link' },
+		{ src: require('./social/3.png'), href: 'https://web.facebook.com/andrey.vaviloff?_rdc=1&_rdr' },
+		{ src: require('./social/4.png'), href: 'https://web.facebook.com/Julia.Hirokama/posts/3985459101512005' },
+		{ src: require('./social/5.png'), href: 'https://www.instagram.com/vasilisa_lembas_soldatova' },
+		{ src: require('./social/6.png'), href: '' },
+		{ src: require('./social/7.png'), href: 'https://www.instagram.com/souvenir.na.zakaz' },
+		{ src: require('./social/8.png'), href: 'https://www.instagram.com/djkostyafix' },
+		{ src: require('./social/9.png'), href: 'https://www.instagram.com/matersolis/' },
 	]
 }

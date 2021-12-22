@@ -36,7 +36,7 @@ export default {
 		align-items: flex-start;
 		flex-wrap: wrap;
 		> * {
-			flex: 1 0 450px;
+			flex: 1 0 400px;
 			max-width: 600px;
 			margin: 0 auto;
 		}
@@ -45,6 +45,7 @@ export default {
 			padding: 50px 90px 0 0;
 			h2 {
 				font-size: 50px;
+				line-height: 1.15em;
 				color: #FFFFFF;
 				font-weight: 400;
 			}
@@ -54,7 +55,8 @@ export default {
 				border-left: 1px solid #65B9F4;
 				padding-left: 16px;
 				margin-top: 60px;
-				line-height: 28px;
+				line-height: 1.4em;
+				font-family: 'Inter', sans-serif;
 			}
 		}
 		&--list {
@@ -62,6 +64,7 @@ export default {
 			padding: 0;
 			color: #FFFFFF;
 			font-size: 25px;
+			line-height: 1.4em;
 			border-left: 1px solid #65B9F4;
 			border-bottom: 1px solid #65B9F4;
 			li {
@@ -90,6 +93,78 @@ export default {
 												1px 1px 0 #FF8B60,
 												0px 0px 10px rgba(164, 228, 237, 0.15);
 					opacity: .4;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1240px) {
+	.info {
+		&__content {
+			&--description {
+				padding: 50px 90px 0 40px;
+				p {
+					font-size: 18px;
+				}
+				h2 {
+					font-size: 40px;
+				}
+			}
+			&--list {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.info {
+		&__content {
+			padding: 100px 40px;
+			&--description {
+				padding: 0;
+				margin: 0;
+				margin-bottom: 90px;
+				border: none;
+				h2 {
+					font-size: 30px;
+				}
+				p {
+					font-size: 16px;
+				}
+			}
+			&--list {
+				margin: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.info {
+		&__content {
+			padding: 100px 10px;
+			> * {
+				flex-shrink: 1;
+			}
+			&--description {
+				padding: 0;
+				margin: 0;
+				margin-bottom: 90px;
+				border: none;
+				h2 {
+					font-size: 30px;
+				}
+				p {
+					font-size: 16px;
+					margin-top: 40px;
+				}
+			}
+			&--list {
+				margin: 0;
+				li {
+					padding: 5px 0 5px 10px;
 				}
 			}
 		}

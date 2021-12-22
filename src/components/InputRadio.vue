@@ -54,11 +54,16 @@ export default {
 	}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 550px) {
 	.options .radio__input:checked + .radio__custom::after {
 		width: .5em;
 		height: .5em;
-		transform: translate(2px, 2px);
+		transform: translate(1.5px, 1.5px);
+	}
+	.options {
+		.radio {
+			font-size: 15px;
+		}
 	}
 }
 </style>

@@ -1,16 +1,19 @@
 <template>
 	<section class="about">
-		<h2>Университет<br>искусственного интеллекта</h2>
+		<h2>Университет <br>искусственного интеллекта</h2>
 		<div class="about__content">
 			<div class="about__content--images">
 				<picture class="first">
-					<img :src="require('../assets/about/1.png')" :srcset="require('../assets/about/1.webp')" alt="Фото с занятий 1">
+					<img class="desktop" :src="require('../assets/about/1.png')" alt="Фото презентации 1">
+					<img class="mobile" :src="require('../assets/about/1-768.png')" alt="Фото презентации 1">
 				</picture>
 				<picture class="second">
-					<img :src="require('../assets/about/2.png')" :srcset="require('../assets/about/2.webp')" alt="Фото с занятий 2">
+					<img class="desktop" :src="require('../assets/about/2.png')" alt="Фото презентации 2">
+					<img class="mobile" :src="require('../assets/about/2-768.png')" alt="Фото презентации 2">
 				</picture>
 				<picture class="third">
-					<img :src="require('../assets/about/3.png')" :srcset="require('../assets/about/3.webp')" alt="Фото с занятий 3">
+					<img class="desktop" :src="require('../assets/about/3.png')" alt="Фото презентации 3">
+					<img class="mobile" :src="require('../assets/about/3-768.png')" alt="Фото презентации 3">
 				</picture>
 			</div>
 			<div class="about__content--info">
@@ -40,11 +43,14 @@ export default {
 	background: no-repeat url('../assets/aboutbg.svg');
 	background-color: #3F5168;
 	background-position: calc(100% - 33px) 33px;
+	.mobile {
+		display: none;
+	}
 	h2 {
 		color: #F8F8F8;
 		font-weight: 400;
 		font-size: 50px;
-		line-height: 58px;
+		line-height: 1.16em;
 		padding-bottom: 100px;
 	}
 	&__content {
@@ -52,12 +58,12 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		> * {
-			flex: 1 0 450px;
+			flex: 1 1 391px;
 			max-width: 600px;
 			margin: auto;
 		}
 		&--images {
-			padding-right: 100px;
+			padding-right: 50px;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
@@ -103,13 +109,13 @@ export default {
 			}
 			.third {
 				margin-bottom: -165px;
-				transform: translate(-200px, -60%);
+				transform: translate(-170px, -60%);
 			}
 		}
 		&--info {
 			h3 {
 				font-size: 25px;
-				line-height: 35px;
+				line-height: 1.4em;
 				color: #65B9F4;
 				position: relative;
 				&::after {
@@ -125,11 +131,126 @@ export default {
 			p {
 				color: #F4F4F4;
 				font-size: 20px;
-				line-height: 28px;
+				line-height: 1.4em;
 				margin: 20px 0 30px;
 				font-family: 'Inter', sans-serif;
 				&:last-child {
 					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.about {
+		h2 {
+			font-size: 40px;
+			padding: 100px 40px 0;
+			max-width: 460px;
+			margin: 0;
+		}
+		&__content {
+			padding: 80px 40px 100px;
+			&--info {
+				margin: 0;
+				h3 {
+					font-size: 20px;
+				}
+				p {
+					font-size: 18px;
+				}
+			}
+			&--images {
+				margin: 0;
+				gap: 50px;
+				.first, .second, .third {
+					margin: 0;
+					transform: unset;
+				}
+				.second {
+					&::before {
+						right: 40%;
+						top: -35px;
+					}
+					&::after {
+						left: -20%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.about {
+		background: no-repeat #3F5168 url('../assets/aboutbg-768.svg');
+		background-position: 100% 33px;
+		h2 {
+			max-width: 100%;
+			font-size: 30px;
+			br {
+				display: none;
+			}
+		}
+		.mobile {
+			display: unset;
+		}
+		.desktop {
+			display: none;
+		}
+		&__content {
+			> * {
+				max-width: 100%;
+			}
+			&--images {
+				order: 1;
+				margin-top: 90px;
+				padding: 0;
+				.first, .third {
+					transform: translateX(-40px);
+				}
+				.second {
+					margin-left: auto;
+					transform: translateX(40px);
+					&::before {
+						right: 100%;
+					}
+					&::after {
+						left: -100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.about {
+		.mobile {
+			display: none;
+		}
+		.desktop {
+			display: block;
+			width: 100%;
+		}
+		h2 {
+			padding: 100px 10px 0;
+		}
+		&__content {
+			padding: 60px 10px 100px;
+			&--images {
+				.second {
+					&::before {
+						right: 50%;
+					}
+					&::after {
+						left: -50%;
+					}
+				}
+				.first, .second, .third {
+					transform: unset;
+					margin: auto;
 				}
 			}
 		}

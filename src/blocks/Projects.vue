@@ -1,13 +1,13 @@
 <template>
-	<section class="projects">
+	<section class="projects" ref="elem">
 		<div class="projects__header">
-			<h2>AI проекты<br>студентов</h2>
+			<h2>AI проекты <br>студентов</h2>
 			<p>Наши студенты создали более <b>196</b> AI проектов.<br>Посмотрите некоторые из них</p>
 		</div>
 		<div class="projects__content">
-			<button type="button" class="prev" @click="shift += 617" :disabled="shift >= 0" aria-label="Пролистать список назад"></button>
-			<button type="button" class="next" @click="shift -= 617" :disabled="shift < -6700" aria-label="Пролистать список вперёд"></button>
-			<div class="examples" :style="{ transform: `translate(${shift}px)` }">
+			<button type="button" class="prev" @click="shift++" :disabled="shift >= 0" aria-label="Пролистать список назад"></button>
+			<button type="button" class="next" @click="shift--" :disabled="shift < -(this.projects.length-2)" aria-label="Пролистать список вперёд"></button>
+			<div class="examples" :style="{ transform: `translate(${translate}px)` }" @wheel.prevent="wheel" @touchstart.prevent="touchStart" @touchend.prevent="touchEnd">
 				<figure class="examples__item" v-for="(project, idx) in projects" :key="idx">
 					<img :src="project.src" :srcset="project.srcset" :aria-labelledby="idx">
 					<figcaption :id="idx">{{ project.info }}</figcaption>
@@ -24,8 +24,40 @@ export default {
 	name: 'Projects',
 	data: () => ({
 		projects: projects.list,
-		shift: 0
-	})
+		shift: 0,
+		shiftValue: 617,
+		touchX: 0 
+	}),
+	computed: {
+		translate() {
+			return this.shift * this.shiftValue
+		}
+	},
+	methods: {
+		wheel(e) {
+			if (e.wheelDelta < 0) return this.shift--
+			this.shift++
+		},
+		touchStart(e) {
+			this.touchX = e.changedTouches[0].screenX
+		},
+		touchEnd(e) {
+			const endX = e.changedTouches[0].screenX
+			if (Math.abs(endX - this.touchX) < 20) return
+			if (endX < this.touchX) return this.shift--
+			if (endX > this.touchX) return this.shift++
+		}
+	},
+	watch: {
+		shift(newVal, oldVal) {
+			if (newVal > 0 || newVal < -(this.projects.length - 1)) {
+				this.shift = oldVal
+			}
+		}
+	},
+	mounted() {
+		if (this.$refs.elem.offsetWidth <= 768) return this.shiftValue = 261
+	}
 }
 </script>
 
@@ -37,6 +69,7 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		gap: 20px;
 		padding-bottom: 0;
 		b {
 			color: #FF8B60;
@@ -45,15 +78,17 @@ export default {
 			border-left: 1px solid #65B9F4;
 			padding-left: 10px;
 			color: #383838;
+			font-size: 20px;
+			line-height: 1.4em;
 		}
 		h2 {
 			font-size: 50px;
-			line-height: 58px;
+			line-height: 1.16em;
 			font-weight: 400;
 			font-family: 'Play', sans-serif;
 		}
 		> * {
-			flex: 1 0 450px;
+			flex: 1 1 400px;
 		}
 	}
 	&__content {
@@ -80,11 +115,12 @@ export default {
 			}
 		}
 		.examples {
-			margin-top: 34px;
+			margin-top: 40px;
 			display: flex;
 			gap: 54px;
-			transform: translateX(0);
 			transition-duration: 500ms;
+			transform: translateX(0);
+			width: fit-content;
 			img {
 				border-radius: 4px;
 				border: 1px solid #65B9F4;
@@ -93,7 +129,77 @@ export default {
 				font-weight: 600;
 				color: #3F5168;
 				margin-top: 25px;
+				font-size: 25px;
+				line-height: 1.2em;
 			}
+		}
+	}
+}
+
+@media (max-width: 1240px) {
+	.projects {
+		&__header {
+			padding: 100px 40px 0;
+			p {
+				font-size: 18px;
+			}
+			h2 {
+				font-size: 40px;
+				br {
+					display: none;
+				}
+			}
+		}
+		&__content {
+			padding: 40px 40px 150px;
+		}
+	}
+}
+
+@media (max-width: 860px) {
+	.projects {
+		&__header {
+			gap: 50px;
+			p {
+				font-size: 16px;
+			}
+			h2 {
+				font-size: 30px;
+			}
+		}
+		&__content {
+			.examples {
+				gap: 20px;
+				figcaption {
+					margin-top: 10px;
+					font-size: 16px;
+				}
+				&__item {
+					img {
+						width: 241px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.projects {
+		&__header {
+			padding: 100px 10px 0;
+			p {
+				font-size: 18px;
+			}
+			h2 {
+				font-size: 40px;
+				br {
+					display: none;
+				}
+			}
+		}
+		&__content {
+			padding: 40px 10px 150px;
 		}
 	}
 }

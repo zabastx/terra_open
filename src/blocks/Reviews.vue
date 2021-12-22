@@ -18,24 +18,26 @@
 			<h3>О нас в отзовиках</h3>
 			<div class="text-reviews__list" :style="{ transform: `translateX(${shiftText}px)` }" @wheel.prevent="wheelText">
 				<figure v-for="(item, idx) in reviews.text" :key="idx" :class="{ opacity: idx !== selectedText }">
-						<button type="button" class="prev" aria-label="Предыдущий" @click="selectedText--" :disabled="selectedText <= 0"></button>
-						<button type="button" class="next" aria-label="Следующий" @click="selectedText++" :disabled="selectedText >= reviews.text.length - 1"></button>
 					<a :href="item.href" tabindex="-1"><img :src="item.src"></a>
 					<figcaption v-show="idx === selectedText"><a :href="item.href">Читать весь отзыв в отзовике</a></figcaption>
 				</figure>
+			</div>
+			<div class="btns">
+				<button type="button" class="prev" aria-label="Предыдущий" @click="selectedText--" :disabled="selectedText <= 0"></button>
+				<button type="button" class="next" aria-label="Следующий" @click="selectedText++" :disabled="selectedText >= reviews.text.length - 1"></button>
 			</div>
 		</div>
 		<div class="social">
 			<h3>О нас в соц.сетях</h3>
 			<div class="social__list" :style="{ transform: `translateX(${shiftSocial}px)` }" @wheel.prevent="wheelSocial">
 				<figure v-for="(item, idx) in reviews.social" :key="idx" :class="{ opacity: idx !== selectedSocial }">
-					<template v-if="idx === selectedSocial">
-						<button type="button" class="prev" aria-label="Предыдущий" @click="selectedSocial--" :disabled="selectedSocial <= 0"></button>
-						<button type="button" class="next" aria-label="Следующий" @click="selectedSocial++" :disabled="selectedSocial >= reviews.social.length - 1"></button>
-					</template>
 					<a :href="item.href" tabindex="-1"><img :src="item.src"></a>
 					<figcaption v-show="idx === selectedSocial"><a :href="item.href">Читать отзыв в соц.сети</a></figcaption>
 				</figure>
+			</div>
+			<div class="btns">
+				<button type="button" class="prev" aria-label="Предыдущий" @click="selectedSocial--" :disabled="selectedSocial <= 0"></button>
+				<button type="button" class="next" aria-label="Следующий" @click="selectedSocial++" :disabled="selectedSocial >= reviews.social.length - 1"></button>
 			</div>
 		</div>
 	</section>
@@ -149,6 +151,45 @@ export default {
 	}
 	.text-reviews, .social {
 		padding-bottom: 0;
+		.btns {
+			margin: auto;
+			max-width: 800px;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+			button {
+				position: absolute;
+				bottom: calc(450px / 2);
+				width: 44px;
+				height: 44px;
+				border: none;
+				background: none;
+				cursor: pointer;
+				z-index: 2;
+			}
+			.prev {
+				background: no-repeat center url('../assets/arrow.svg');
+				background-size: 100%;
+				left: -22px;
+				transform: rotateY(180deg);
+				&:disabled {
+					background: no-repeat center url('../assets/arrow-disabled.svg');
+					background-size: 100%;
+					transform: rotateY(0);
+				}
+			}
+			.next {
+				background: no-repeat center url('../assets/arrow.svg');
+				background-size: 100%;
+				right: 0;
+				&:disabled {
+					background: no-repeat center url('../assets/arrow-disabled.svg');
+					background-size: 100%;
+					transform: rotateY(180deg);
+				}
+			}
+		}
 		&__list {
 			display: flex;
 			width: fit-content;
@@ -164,33 +205,6 @@ export default {
 				transform: translateX(25%);
 				position: relative;
 				width: 780px;
-				button {
-					position: absolute;
-					top: 158px;
-					width: 44px;
-					height: 44px;
-					border: none;
-					background: none;
-					cursor: pointer;
-					z-index: 2;
-				}
-				.prev {
-					background: no-repeat center url('../assets/arrow.svg');
-					left: -10px;
-					transform: rotateY(180deg);
-					&:disabled {
-						background: no-repeat center url('../assets/arrow-disabled.svg');
-						transform: rotateY(0);
-					}
-				}
-				.next {
-					background: no-repeat center url('../assets/arrow.svg');
-					right: -10px;
-					&:disabled {
-						background: no-repeat center url('../assets/arrow-disabled.svg');
-						transform: rotateY(180deg);
-					}
-				}
 				> a {
 					box-shadow: 0px 4px 8px rgba(30, 35, 39, 0.1);
 					display: flex;
@@ -257,28 +271,36 @@ export default {
 			font-size: 30px;
 		}
 		.text-reviews, .social {
+			.btns {
+				button {
+					position: static;
+					width: 32px;
+					height: 32px;
+				}
+				.prev {
+					background: no-repeat center url('../assets/arrow.svg');
+					background-size: 100%;
+					left: -22px;
+					transform: rotateY(180deg);
+					&:disabled {
+						background: no-repeat center url('../assets/arrow-disabled.svg');
+						transform: rotateY(0);
+					}
+				}
+				.next {
+					background: no-repeat center url('../assets/arrow.svg');
+					right: 0;
+					&:disabled {
+						background: no-repeat center url('../assets/arrow-disabled.svg');
+						transform: rotateY(180deg);
+					}
+				}
+			}
 			&__list {
 				figure {
 					width: 320px;
-					padding: 13px 19px 43px;
+					padding: 13px 13px 43px;
 					transform: translateX(50%);
-					.prev {
-						left: 47%;
-						transform: rotateY(180deg) translateX(100%);
-						&:disabled {
-							transform: rotateY(0) translateX(-100%);
-						}
-					}
-					.next {
-						right: 47%;
-						transform: rotateY(0) translateX(100%);
-						&:disabled {
-							transform: rotateY(180deg) translateX(-100%);
-						}
-					}
-					button {
-						top: 85%;
-					}
 					figcaption {
 						font-size: 14px;
 						margin-top: 10px;
